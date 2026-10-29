@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Disha P — AI/ML Researcher, UI/UX Designer & Cybersecurity Enthusiast</title>
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Personal portfolio of Disha P, third-year B.E. Computer Science Engineering student at SIMATS Engineering (Class of 2028). Explore projects (JEEVA, Lost&Found, Netflix Analytics), IEEE ATiGB 2026 Best Paper award research, and verified certifications.">
+  <meta name="keywords" content="Disha, Disha P, DISHA-1125, Portfolio, AI, Machine Learning, UI/UX Designer, Cybersecurity, SIMATS Engineering, JEEVA, ATiGB 2026, Histopathology, ECG Biometrics, AMSTEEL Castings, ZyRonix">
+  <meta name="author" content="Disha P">
+  <meta property="og:title" content="Disha P — Portfolio | AI/ML, UI/UX & Cybersecurity">
+  <meta property="og:description" content="Third-year B.E. Computer Science Engineering student at SIMATS Engineering. Explore verified projects, IEEE research publications, awards, and certifications.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/certificates/atigb-best-paper.jpg">
+  <meta name="theme-color" content="#561C24">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Three.js CDN for 3D Hero Scene -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       FR-01: ANIMATED INTRO / LOADING SCREEN (Skippable & Lightweight)
+       ========================================================================== -->
+  <div id="intro-screen" role="dialog" aria-modal="true" aria-label="Loading portfolio experience">
+    <div class="intro-box">
+      <div class="intro-badge">
+        <span class="status-dot"></span>
+        SYSTEM INITIALIZATION
+      </div>
+      <h1 class="intro-title">Disha P</h1>
+      <p class="intro-sub">AI/ML • UI/UX • Cybersecurity</p>
+
+      <div class="intro-progress-bar-wrapper">
+        <div id="intro-progress-bar" class="intro-progress-bar"></div>
+      </div>
+
+      <div class="intro-status-row">
+        <span id="intro-status-text" class="intro-status-text">Allocating neural weights...</span>
+        <span id="intro-percent-text">0%</span>
+      </div>
+
+      <button id="skip-intro-btn" class="skip-intro-btn">Skip Intro ➔</button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DESKTOP TOP FLOATING NAVIGATION DOCK (FR-03)
+       ========================================================================== -->
+  <nav class="desktop-nav" aria-label="Main Navigation">
+    <a href="#home" class="nav-brand">
+      <div class="brand-monogram">D</div>
+      <span>Disha P</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#research" class="nav-link">Research</a></li>
+      <li><a href="#awards" class="nav-link">Awards</a></li>
+      <li><a href="#certifications" class="nav-link">Credentials</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Timeline</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Quick Command Search Trigger -->
+      <button class="action-icon-btn open-cmd-palette-btn" title="Quick Search (Ctrl + K)" aria-label="Open search palette">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+
+      <!-- Sound Toggle Trigger -->
+      <button class="action-icon-btn sound-toggle-btn" title="Toggle audio effects" aria-label="Toggle sound" onclick="window.soundController.toggle()">
+        <span class="sound-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        </span>
+      </button>
+
+      <!-- Theme Switcher Trigger (FR-14) -->
+      <button class="action-icon-btn theme-toggle-btn" title="Toggle Light / Dark mode" aria-label="Toggle theme">
+        <span class="theme-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </span>
+      </button>
+
+      <!-- Resume Button Trigger -->
+      <a href="#resume" class="btn-primary view-resume-trigger" style="padding: 0.45rem 1rem; min-height: 38px; font-size: 0.82rem;">
+        Resume
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Top Bar -->
+  <header class="mobile-top-bar" aria-label="Mobile Header">
+    <a href="#home" class="nav-brand">
+      <div class="brand-monogram">D</div>
+      <span style="font-size: 1rem;">Disha P</span>
+    </a>
+    <div style="display: flex; gap: 0.4rem; align-items: center;">
+      <button class="action-icon-btn open-cmd-palette-btn" style="width: 34px; height: 34px;" title="Search" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+      <button class="action-icon-btn sound-toggle-btn" style="width: 34px; height: 34px;" title="Sound" aria-label="Sound" onclick="window.soundController.toggle()">
+        <span class="sound-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        </span>
+      </button>
+      <button class="action-icon-btn theme-toggle-btn" style="width: 34px; height: 34px;" title="Theme" aria-label="Toggle theme">
+        <span class="theme-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle></svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Bottom Floating Dock (FR-03 & Mobile Optimization) -->
+  <nav class="mobile-bottom-dock" aria-label="Mobile Navigation Dock">
+    <a href="#home" class="mobile-dock-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <span>Home</span>
+    </a>
+    <a href="#about" class="mobile-dock-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <span>About</span>
+    </a>
+    <a href="#projects" class="mobile-dock-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+      <span>Projects</span>
+    </a>
+    <a href="#research" class="mobile-dock-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+      <span>Research</span>
+    </a>
+    <a href="#certifications" class="mobile-dock-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+      <span>Certs</span>
+    </a>
+    <a href="#contact" class="mobile-dock-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SECTION (FR-02: Name, Tagline, Avatar, CTAs, Search Bar - No Projects)
+       ========================================================================== -->
+  <section id="home" class="hero-section">
+    <!-- Interactive 3D Three.js / Canvas Background -->
+    <div id="hero-canvas-container"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <!-- Scrapbook Tape Pill -->
+          <div class="tape-label">
+            <span class="status-dot"></span>
+            <span>SIMATS ENGINEERING • CLASS OF 2028</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight">Disha P.</span>
+          </h1>
+
+          <p class="hero-tagline">
+            AI/ML Researcher • UI/UX Designer • Cybersecurity Enthusiast
+          </p>
+
+          <p class="hero-bio">
+            Third-year B.E. Computer Science Engineering student at SIMATS Engineering (Class of 2028). I build practical software and empirical research across AI/ML, UI/UX and cybersecurity. Author of IEEE-published medical deep learning research (ATiGB 2026 Best Paper Presentation) and Tech Star Summit 2026 Best Poster award winner.
+          </p>
+
+          <!-- Soft-UI Search Bar Hero Widget (Reference Inspiration 3) -->
+          <div class="hero-search-bar" role="search" aria-label="Quick search portfolio">
+            <div class="search-placeholder">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Search projects, research, certificates, tools...</span>
+            </div>
+            <div class="search-shortcut">Ctrl + K</div>
+          </div>
+
+          <!-- Hero Call-to-Actions -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn-primary">
+              <span>Explore Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#resume" class="btn-secondary view-resume-trigger">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download Resume</span>
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <span>Contact Me</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Illustrated Avatar Showcase Column (FR-02 & FR-16) -->
+        <div class="hero-visual">
+          <div id="interactive-avatar" class="avatar-container" title="Click me for easter eggs & fun facts!">
+            <div class="avatar-inner">
+              <img src="assets/images/avatar-cat.jpg" alt="Disha's illustrated mascot avatar" class="avatar-img" />
+            </div>
+
+            <!-- Easter Egg Dialogue Bubble (FR-16) -->
+            <div id="mascot-bubble" class="mascot-bubble">
+              🐾 Click me to explore Disha's universe!
+            </div>
+
+            <!-- Floating Achievement Badges -->
+            <div class="orbit-badge orbit-badge-1">
+              <span>🏆</span>
+              <span>Best Paper Award (ATiGB 2026)</span>
+            </div>
+            <div class="orbit-badge orbit-badge-2">
+              <span>🛡️</span>
+              <span>Deloitte Cyber Verified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       METRICS & QUICK STATS STRIP
+       ========================================================================== -->
+  <section class="stats-strip" aria-label="Key Highlights">
+    <div class="container">
+      <div id="stats-grid-container" class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">2<span class="suffix"></span></div>
+          <div class="stat-label">Major Research Awards</div>
+          <div class="stat-detail">IEEE ATiGB & Tech Star Summit</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">4<span class="suffix"></span></div>
+          <div class="stat-label">Research Papers</div>
+          <div class="stat-detail">Medical AI, Biometrics & Security</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3<span class="suffix"></span></div>
+          <div class="stat-label">Featured Projects</div>
+          <div class="stat-detail">JEEVA, Lost&Found, Netflix EDA</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">11<span class="suffix">+</span></div>
+          <div class="stat-label">Certifications</div>
+          <div class="stat-detail">Oracle, NPTEL, Forage & GUVI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FR-04: ABOUT & EDUCATION SECTION
+       ========================================================================== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="tape-label">ACADEMIC JOURNEY & PHILOSOPHY</div>
+        <h2 class="section-title">Engineering at the Intersections</h2>
+        <p class="section-subtitle">Combining computational rigor with empathetic human-centered design.</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Education Card (Scrapbook Aesthetic with tape & pin) -->
+        <div class="scrapbook-card">
+          <div class="card-pin"></div>
+          <div class="tape-label" style="margin-bottom: 0.8rem; transform: rotate(-1deg);">EDUCATION / DEGREE</div>
+          <div class="education-meta">
+            <h3 class="institution-name">SIMATS Engineering</h3>
+            <span class="edu-year">2024 – 2028</span>
+          </div>
+          <div class="degree-name">B.E. in Computer Science and Engineering (Third Year)</div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            Saveetha Institute of Medical and Technical Sciences, Chennai, India.
+          </p>
+          <ul class="edu-highlights">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Specializing in Artificial Intelligence, Medical Deep Learning & Information Security.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Published IEEE Researcher: DOI 10.1109/ATiGB70203.2026.11628256 in IEEE Xplore.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Campus Leadership: Registration Head at ZyRonix Tech Club (2026 – 2028 · 8 months).</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Industry Experience: ERP Data Analyst Intern at AMSTEEL Castings Pvt, Hosur.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Personal Philosophy Card -->
+        <div class="scrapbook-card">
+          <div class="card-pin"></div>
+          <div class="tape-label" style="margin-bottom: 0.8rem; transform: rotate(1deg);">MY STORY & CRAFT</div>
+          <h3 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Bridging Code, Canvas & Cryptography</h3>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 1rem;">
+            I believe modern computer science shouldn't force developers into a single box. The most resilient systems combine the mathematical integrity of machine learning models, the bulletproof posture of cybersecurity protocols, and the delightful clarity of thoughtfully designed interfaces.
+          </p>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65;">
+            Whether I'm analyzing cardiac waveform data for non-invasive biometric auth, benchmarking deep learning models on breast cancer histopathology, or architecting localized crisis platforms like JEEVA, my goal is always the same: technology that works reliably, looks beautiful, and solves genuine human problems.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 Pillars / Focus Areas Grid -->
+      <h3 class="pillars-title">The Three Pillars of My Work</h3>
+      <div id="pillars-grid-container" class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+          </div>
+          <h4>AI & Machine Learning</h4>
+          <div class="pillar-tagline">Medical Deep Learning & Sequence Models</div>
+          <p class="pillar-desc">Training convolutional networks and transformer models on biomedical imagery and cardiac signals. Published author in IEEE Xplore with peer-reviewed medical imaging benchmarks.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Deep Learning</span>
+            <span class="tech-tag">CNNs</span>
+            <span class="tech-tag">Transformers</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">NPTEL DL</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>
+          </div>
+          <h4>UI/UX & Web Development</h4>
+          <div class="pillar-tagline">Accessible, Multilingual & Empathetic Tech</div>
+          <p class="pillar-desc">Designing tactile, intuitive web applications that solve real community challenges. Architecting responsive layouts, localized language support (JEEVA), and clean design systems.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">Soft-UI</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          </div>
+          <h4>Cybersecurity & Embedded Systems</h4>
+          <div class="pillar-tagline">Biometric Verification & Protocol Defense</div>
+          <p class="pillar-desc">Researching heartbeat biometric authentication, comparing SSL vs End-to-End application encryption, and completing industry cyber simulations with Deloitte Australia.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Biometric Auth</span>
+            <span class="tech-tag">SSL vs E2E</span>
+            <span class="tech-tag">Deloitte Cyber</span>
+            <span class="tech-tag">ESP32</span>
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">IoT Sensors</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FR-05 & FR-13: FEATURED PROJECTS (Swipeable Carousel + Grid Toggle)
+       ========================================================================== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="tape-label">ENGINEERING SHOWCASE</div>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Practical software and data projects across multilingual community help, campus recovery, and content analytics.</p>
+      </div>
+
+      <!-- Project Filter Tabs -->
+      <div class="project-filter-bar">
+        <button class="filter-pill active" data-proj-filter="all">All Projects (3)</button>
+        <button class="filter-pill" data-proj-filter="web">Web & Multilingual</button>
+        <button class="filter-pill" data-proj-filter="utility">Campus Utility</button>
+        <button class="filter-pill" data-proj-filter="analytics">Data Science & Analytics</button>
+      </div>
+
+      <!-- Projects View Toolbar -->
+      <div class="projects-toolbar">
+        <div class="view-toggle-group">
+          <button class="view-toggle-btn active" data-view="carousel" title="Carousel view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <span>Carousel</span>
+          </button>
+          <button class="view-toggle-btn" data-view="grid" title="Grid view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <span>Grid</span>
+          </button>
+        </div>
+
+        <div class="carousel-controls">
+          <button id="carousel-prev-btn" class="carousel-arrow-btn" aria-label="Previous Project" title="Previous Project">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button id="carousel-next-btn" class="carousel-arrow-btn" aria-label="Next Project" title="Next Project">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Track Container (PRE-RENDERED) -->
+      <div class="projects-container">
+        <div id="projects-track" class="projects-track">
+          
+          <!-- Project 1: JEEVA -->
+          <article class="project-card" data-project-id="jeeva-community" data-proj-type="web">
+            <div class="project-cover" style="background: linear-gradient(135deg, #561C24 0%, #C7B7A3 50%, #6D2932 100%);">
+              <div class="project-cover-pattern"></div>
+              <span class="project-category-badge">Web • Multilingual • Social Impact</span>
+              <div class="project-cover-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.35rem;">
+                <h3 class="project-title" style="margin-bottom:0;">JEEVA</h3>
+                <span class="cert-type-pill" style="color:#10B981; border-color:#10B981;">In Progress</span>
+              </div>
+              <p class="project-oneliner">A multilingual community-help platform designed for localized emergency mutual aid, resource coordination, and urgent public assistance.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Supabase</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/DISHA-1125/JEEVA" target="_blank" rel="noopener noreferrer" class="repo-pill-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  DISHA-1125/JEEVA ↗
+                </a>
+                <button class="case-study-btn" onclick="openProjectModal('jeeva-community')">
+                  Case Study ➔
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Lost and Found -->
+          <article class="project-card" data-project-id="lost-and-found" data-proj-type="utility">
+            <div class="project-cover" style="background: linear-gradient(135deg, #561C24 0%, #6D2932 50%, #C7B7A3 100%);">
+              <div class="project-cover-pattern"></div>
+              <span class="project-category-badge">Full-Stack • Web • Campus Utility</span>
+              <div class="project-cover-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><path d="M11 8v6"></path><path d="M8 11h6"></path></svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.35rem;">
+                <h3 class="project-title" style="margin-bottom:0;">Lost and Found</h3>
+                <span class="cert-type-pill" style="color:#10B981; border-color:#10B981;">In Progress</span>
+              </div>
+              <p class="project-oneliner">Web platform to report, search, match, and securely manage lost and found items across campus communities.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Supabase</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/DISHA-1125/lostfound" target="_blank" rel="noopener noreferrer" class="repo-pill-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  DISHA-1125/lostfound ↗
+                </a>
+                <button class="case-study-btn" onclick="openProjectModal('lost-and-found')">
+                  Case Study ➔
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: OTT Content Strategy / Netflix Analytics -->
+          <article class="project-card" data-project-id="netflix-analytics" data-proj-type="analytics">
+            <div class="project-cover" style="background: linear-gradient(135deg, #6D2932 0%, #561C24 60%, #E8D8C4 100%);">
+              <div class="project-cover-pattern"></div>
+              <span class="project-category-badge">Data Science • Analytics • Python</span>
+              <div class="project-cover-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.35rem;">
+                <h3 class="project-title" style="margin-bottom:0;">OTT Content Strategy</h3>
+                <span class="cert-type-pill" style="color:var(--accent); border-color:var(--accent);">Completed</span>
+              </div>
+              <p class="project-oneliner">8,807 titles analysed with Python, Pandas, Matplotlib and Seaborn to uncover streaming catalog growth, genre evolutions, and release strategies.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">Seaborn</span>
+                <span class="tech-tag">Jupyter</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/DISHA-1125/DATAANALYST_NETFLIX" target="_blank" rel="noopener noreferrer" class="repo-pill-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  DISHA-1125/DATAANALYST_NETFLIX ↗
+                </a>
+                <button class="case-study-btn" onclick="openProjectModal('netflix-analytics')">
+                  Case Study ➔
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FR-06: RESEARCH SECTION (Goal-Level Summaries Only)
+       ========================================================================== -->
+  <section id="research" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="tape-label">ACADEMIC PAPERS & INVESTIGATIONS</div>
+        <h2 class="section-title">Research Works</h2>
+        <p class="section-subtitle">Goal-level summaries of published IEEE deep learning research and active biometric & security studies.</p>
+      </div>
+
+      <!-- Research Filter Tabs -->
+      <div class="research-filter-bar">
+        <button class="filter-pill active" data-res-filter="all">All Research (4)</button>
+        <button class="filter-pill" data-res-filter="medical">Medical AI (IEEE)</button>
+        <button class="filter-pill" data-res-filter="biometric">Biometrics</button>
+        <button class="filter-pill" data-res-filter="health">Digital Health</button>
+        <button class="filter-pill" data-res-filter="cyber">Network Security</button>
+      </div>
+
+      <div id="research-grid-container" class="research-grid">
+        
+        <!-- Research 1: Breast Cancer Histopathology (IEEE ATiGB 2026) -->
+        <div class="research-card" data-res-category="medical">
+          <div class="card-pin"></div>
+          <div class="award-stamp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            Best Paper Presentation Award (Paper ID: 380)
+          </div>
+          <span class="research-domain-badge">Biomedical Deep Learning • Medical Imaging</span>
+          <h3>Histopathology Images Supported Benign/Malignant Breast Cancer Analysis using Lightweight and Conventional Deep Learning Models</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.35rem;">
+            IEEE ATiGB 2026, Da Nang, Vietnam (10–11 July 2026)
+          </p>
+          <p style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent); margin-bottom: 0.8rem;">
+            DOI: <a href="https://doi.org/10.1109/ATiGB70203.2026.11628256" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">10.1109/ATiGB70203.2026.11628256</a>
+          </p>
+
+          <div class="research-goal-box">
+            <div class="research-goal-label">Research Goal</div>
+            <div class="research-goal-text">Classify histopathology images as benign or malignant using lightweight and conventional deep learning models, enabling fast, resource-efficient clinical screening.</div>
+          </div>
+
+          <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
+            <strong>Approach:</strong> Comparative deep learning benchmarks evaluating lightweight convolutional architectures against conventional heavy models for edge clinical diagnostic hardware.
+          </p>
+
+          <div class="research-card-footer" style="flex-wrap: wrap; gap: 0.6rem;">
+            <a href="https://ieeexplore.ieee.org/document/11628256/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 0.4rem 0.9rem; min-height: 36px; font-size: 0.8rem;">
+              IEEE Xplore Article ↗
+            </a>
+            <button class="certificate-preview-trigger" onclick="openCertificateModal('cert-atigb-award')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              View Certificate
+            </button>
+          </div>
+        </div>
+
+        <!-- Research 2: Heartbeat-Based Biometrics (Tech Star Summit 2026) -->
+        <div class="research-card" data-res-category="biometric">
+          <div class="card-pin"></div>
+          <div class="award-stamp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            Best Poster Presentation Award (Tech Star Summit 2026)
+          </div>
+          <span class="research-domain-badge">AI/ML • Biometric Security • Deep Learning</span>
+          <h3>Heartbeat-Based Biometric Authentication Using Transformer Models Compared with Hidden Markov Models</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+            Tech Star Summit 2026 & Department of CSE, SIMATS Engineering
+          </p>
+
+          <div class="research-goal-box">
+            <div class="research-goal-label">Research Goal</div>
+            <div class="research-goal-text">Explore cardiac signals (ECG) as a biometric modality for spoof-resistant user authentication using Transformer models compared with classical Hidden Markov Models.</div>
+          </div>
+
+          <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
+            <strong>Approach:</strong> Capturing individual cardiac electrical waveforms with sequence attention mechanisms to evaluate identification accuracy and resistance to synthetic replay attacks.
+          </p>
+
+          <div class="research-card-footer">
+            <a href="https://github.com/DISHA-1125/RESEARCH_1" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.4rem 0.9rem; min-height: 36px; font-size: 0.8rem;">
+              GitHub: RESEARCH_1 ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Research 3: Cognitive Rehabilitation -->
+        <div class="research-card" data-res-category="health">
+          <div class="card-pin"></div>
+          <div class="tape-label" style="margin-bottom: 0.8rem; transform: rotate(-1deg);">HEALTHCARE HCI</div>
+          <span class="research-domain-badge">Digital Health • Stroke Rehabilitation</span>
+          <h3>A Comparison of Smartphone-Based Cognitive Rehabilitation and In-Person Therapy on Cognitive Outcomes in Stroke Survivors</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+            SIMATS Engineering Research Track
+          </p>
+
+          <div class="research-goal-box">
+            <div class="research-goal-label">Research Goal</div>
+            <div class="research-goal-text">Investigate whether mobile smartphone-based cognitive rehabilitation delivers comparable therapeutic outcomes to conventional in-person therapy in stroke survivors.</div>
+          </div>
+
+          <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
+            <strong>Approach:</strong> Quantitative outcome comparison tracking patient adherence, cognitive task performance scores, and usability factors across digital vs. in-clinic modalities.
+          </p>
+
+          <div class="research-card-footer">
+            <a href="https://github.com/DISHA-1125/RESEARCH_1" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.4rem 0.9rem; min-height: 36px; font-size: 0.8rem;">
+              GitHub: RESEARCH_1 ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Research 4: SSL vs E2E -->
+        <div class="research-card" data-res-category="cyber">
+          <div class="card-pin"></div>
+          <div class="tape-label" style="margin-bottom: 0.8rem; transform: rotate(1deg);">CRYPTOGRAPHY</div>
+          <span class="research-domain-badge">Cybersecurity • Network Protocols</span>
+          <h3>SSL vs E2E Research: Transport-Layer Encryption vs Application End-to-End Security</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+            Cybersecurity Architecture Study
+          </p>
+
+          <div class="research-goal-box">
+            <div class="research-goal-label">Research Goal</div>
+            <div class="research-goal-text">Conduct a comparative security analysis between transport-layer SSL/TLS protocols and end-to-end (E2E) application encryption under modern intermediary and man-in-the-middle threat models.</div>
+          </div>
+
+          <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
+            <strong>Approach:</strong> Mapping attack vectors, certificate trust chains, and key escrow implications across enterprise transport security vs. zero-trust client-side encryption.
+          </p>
+
+          <div class="research-card-footer">
+            <a href="https://github.com/DISHA-1125/RESEARCH_1" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.4rem 0.9rem; min-height: 36px; font-size: 0.8rem;">
+              GitHub: RESEARCH_1 ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DEDICATED HONORS & AWARDS SECTION
+       ========================================================================== -->
+  <section id="awards" class="section" style="background: rgba(109, 41, 50, 0.15);">
+    <div class="container">
+      <div class="section-header">
+        <div class="tape-label">RECOGNITION & HONORS</div>
+        <h2 class="section-title">Major Awards</h2>
+        <p class="section-subtitle">Competitive conference and summit accolades recognizing empirical excellence in machine learning.</p>
+      </div>
+
+      <div class="awards-grid">
+        <!-- Award 1: Vietnam Best Paper Presentation -->
+        <div class="award-card">
+          <div class="award-badge-top">
+            🏆 BEST PAPER PRESENTATION AWARD • VIETNAM
+          </div>
+          <h3 style="font-size: 1.25rem; line-height: 1.4; margin-bottom: 0.45rem;">Histopathology Images Supported Benign/Malignant Breast Cancer Analysis using Lightweight and Conventional deep learning Model</h3>
+          <p style="font-size: 0.84rem; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem;">
+            11th International Conference on Applying New Technology in Green Buildings (ATiGB 2026) • Da Nang, Vietnam (10–11 July 2026) • Paper ID: 380
+          </p>
+
+          <!-- Stage Ceremony Photo in Vietnam -->
+          <div class="award-photo-container" onclick="openAwardPhotoModal('assets/images/best-paper-vietnam.jpg', 'Best Paper Presentation Award Ceremony', 'IEEE ATiGB 2026 Gala Dinner, Da Nang, Vietnam (July 10–11, 2026)')" title="Click to view full ceremony photo">
+            <img src="assets/images/best-paper-vietnam.jpg" alt="Disha P and co-recipients receiving Best Paper Presentation Award at IEEE ATiGB 2026 Gala Dinner in Da Nang, Vietnam" class="award-stage-photo" />
+            <div class="award-photo-overlay">
+              <span>Gala Dinner Stage Ceremony • Da Nang, Vietnam</span>
+              <span class="award-photo-zoom-hint">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Photo
+              </span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
+            Officially awarded <strong>Certificate of Best Paper Presentation</strong> at the IEEE-indexed ATiGB 2026 international conference in Da Nang, Vietnam. Authored by Ragavi V L, Millicent Mabel M, Vickram A S, Kavitha D, and Disha P. Published in IEEE Xplore.
+          </p>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <button class="btn-primary" style="padding: 0.42rem 0.95rem; min-height: 36px; font-size: 0.82rem;" onclick="openCertificateModal('cert-atigb-award')">
+              View Verified Certificate
+            </button>
+            <a href="https://doi.org/10.1109/ATiGB70203.2026.11628256" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.42rem 0.95rem; min-height: 36px; font-size: 0.82rem;">
+              View DOI Record ↗
+            </a>
+            <a href="https://ieeexplore.ieee.org/document/11628256/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.42rem 0.95rem; min-height: 36px; font-size: 0.82rem;">
+              IEEE Xplore ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Award 2: Best Poster Presentation -->
+        <div class="award-card">
+          <div class="award-badge-top">
+            🏅 BEST POSTER PRESENTATION AWARD
+          </div>
+          <h3 style="font-size: 1.25rem; line-height: 1.4; margin-bottom: 0.45rem;">Heartbeat-Based Biometric Authentication Using Transformer Models Compared with Hidden Markov Models</h3>
+          <p style="font-size: 0.84rem; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem;">
+            Tech Star Summit 2026 • SIMATS Engineering, Dept. of CSE
+          </p>
+
+          <!-- Stage Ceremony Photo for Best Poster -->
+          <div class="award-photo-container" onclick="openAwardPhotoModal('assets/images/best-poster-presentation.jpg', 'Best Poster Presentation Felicitation Ceremony', 'Tech Star Summit 2026 • SIMATS Engineering')" title="Click to view full ceremony photo">
+            <img src="assets/images/best-poster-presentation.jpg" alt="Disha P receiving Best Poster Presentation Award on stage at SIMATS Engineering" class="award-stage-photo" />
+            <div class="award-photo-overlay">
+              <span>Stage Felicitation Ceremony • SIMATS Engineering</span>
+              <span class="award-photo-zoom-hint">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Photo
+              </span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1rem;">
+            Awarded for innovative biometric security research exploring cardiac electrical signals (ECG) as a spoof-resistant living biometric modality, contrasting Transformer networks with classical Hidden Markov Models.
+          </p>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <button class="btn-primary" style="padding: 0.42rem 0.95rem; min-height: 36px; font-size: 0.82rem;" onclick="openAwardPhotoModal('assets/images/best-poster-presentation.jpg', 'Best Poster Presentation Felicitation Ceremony', 'Tech Star Summit 2026 • SIMATS Engineering')">
+              View Stage Ceremony Photo
+            </button>
+            <a href="https://github.com/DISHA-1125/RESEARCH_1" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 0.42rem 0.95rem; min-height: 36px; font-size: 0.82rem;">
+              Explore Research Repo ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FR-07: CERTIFICATIONS & HACKATHONS
+       ========================================================================== -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="tape-label">CREDENTIALS & COMPETITIONS</div>
+        <h2 class="section-title">Certifications & Hackathons</h2>
+        <p class="section-subtitle">Verified professional credentials, industry job simulations, and competitive hackathon achievements.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="certs-filter-bar">
+        <button class="filter-pill active" data-filter="all">All Credentials (13)</button>
+        <button class="filter-pill" data-filter="awards">Awards (2)</button>
+        <button class="filter-pill" data-filter="hackathons">Hackathons (4)</button>
+        <button class="filter-pill" data-filter="simulations">Job Simulations (2)</button>
+        <button class="filter-pill" data-filter="certifications">Certifications (5)</button>
+      </div>
+
+      <!-- Certifications Grid (PRE-RENDERED) -->
+      <div id="certs-grid-container" class="certs-grid">
+        
+        <!-- Cert 1: ATiGB Award -->
+        <div class="cert-card" data-category="awards">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">Award</span>
+            <span class="cert-issuer">10-11 July 2026</span>
+          </div>
+          <button type="button" class="cert-preview-trigger" onclick="openCertificateModal('cert-atigb-award')" aria-label="View Best Paper Presentation certificate">
+            <img src="assets/certificates/atigb-best-paper.jpg" alt="IEEE ATiGB 2026 Best Paper Presentation certificate" class="cert-preview-img" />
+          </button>
+          <h4 class="cert-title">Certificate of Best Paper Presentation (Paper ID: 380)</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.4rem;">IEEE ATiGB 2026 (Da Nang, Vietnam)</div>
+          <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.45rem; line-height: 1.4;">
+            "Histopathology Images Supported Benign/Malignant Breast Cancer Analysis using Lightweight and Conventional deep learning Model"
+          </p>
+          <p class="cert-description">Awarded for outstanding research presentation on histopathology breast cancer classification using deep learning. Published in IEEE Xplore.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Award & Research</span>
+            <a href="assets/certificates/atigb-best-paper.jpg" onclick="event.preventDefault(); openCertificateModal('cert-atigb-award')" class="verify-link">
+              View Certificate ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 2: Tech Star Summit Award -->
+        <div class="cert-card" data-category="awards">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">Award</span>
+            <span class="cert-issuer">2026</span>
+          </div>
+          <button type="button" class="cert-preview-trigger" onclick="openAwardPhotoModal('assets/images/best-poster-presentation.jpg', 'Best Poster Presentation Felicitation Ceremony', 'Tech Star Summit 2026 • SIMATS Engineering')" aria-label="View Best Poster Presentation stage ceremony photo">
+            <img src="assets/images/best-poster-presentation.jpg" alt="Best Poster Presentation stage ceremony photo" class="cert-preview-img" style="object-position: center 25%;" />
+          </button>
+          <h4 class="cert-title">Best Poster Presentation Award</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.4rem;">Tech Star Summit 2026 • SIMATS Engineering</div>
+          <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.45rem; line-height: 1.4;">
+            "Heartbeat-Based Biometric Authentication Using Transformer Models Compared with Hidden Markov Models"
+          </p>
+          <p class="cert-description">Awarded for research exploring cardiac electrical signals as a spoof-resistant living biometric modality. Co-authored by Disha P.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Award & Research</span>
+            <a href="assets/images/best-poster-presentation.jpg" onclick="event.preventDefault(); openAwardPhotoModal('assets/images/best-poster-presentation.jpg', 'Best Poster Presentation Felicitation Ceremony', 'Tech Star Summit 2026 • SIMATS Engineering')" class="verify-link">
+              View Ceremony Photo ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 3: NPTEL Deep Learning -->
+        <div class="cert-card" data-category="certifications">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">Certification</span>
+            <span class="cert-issuer">Completed</span>
+          </div>
+          <h4 class="cert-title">NPTEL Deep Learning</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">NPTEL / Swayam</div>
+          <p class="cert-description">Comprehensive national-level curriculum covering neural network theory, backpropagation, CNNs, RNNs, and optimization.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Certification</span>
+            <span style="font-size: 0.78rem; color: var(--accent);">Credential Verified</span>
+          </div>
+        </div>
+
+        <!-- Cert 4: NPTEL Internet of Things -->
+        <div class="cert-card" data-category="certifications">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">Certification</span>
+            <span class="cert-issuer">Completed</span>
+          </div>
+          <h4 class="cert-title">NPTEL Internet of Things</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">NPTEL / Swayam</div>
+          <p class="cert-description">IoT architecture, sensor interfacing, microcontrollers (ESP32/Arduino), wireless protocols, and cloud IoT connectivity.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Certification</span>
+            <span style="font-size: 0.78rem; color: var(--accent);">Credential Verified</span>
+          </div>
+        </div>
+
+        <!-- Cert 5: Oracle SE17 Java -->
+        <div class="cert-card" data-category="certifications">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">Certification</span>
+            <span class="cert-issuer">2025 – 2026</span>
+          </div>
+          <h4 class="cert-title">Oracle SE17 Java Certification</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Oracle</div>
+          <p class="cert-description">Core object-oriented design, modular programming, memory management, and robust Java software engineering practices.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Certification</span>
+            <span style="font-size: 0.78rem; color: var(--accent);">Credential On File</span>
+          </div>
+        </div>
+
+        <!-- Cert 6: Deloitte Cyber -->
+        <div class="cert-card" data-category="simulations">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">Job simulation</span>
+            <span class="cert-issuer">Completed</span>
+          </div>
+          <h4 class="cert-title">Deloitte Australia Cyber Job Simulation</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Deloitte Australia via Forage</div>
+          <p class="cert-description">Practical simulation tackling security architecture, threat assessments, vulnerability analysis, and client risk remediation strategies.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Job Simulation</span>
+            <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_6965df5c6582267cb3d7780f_1768285664772_completion_certificate.pdf" target="_blank" rel="noopener noreferrer" class="verify-link">
+              Verify Credential ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 7: Gen AI Analytics -->
+        <div class="cert-card" data-category="simulations">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">Job simulation</span>
+            <span class="cert-issuer">Completed</span>
+          </div>
+          <h4 class="cert-title">Gen AI Powered Data Analytics</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Forage</div>
+          <p class="cert-description">Leveraging generative AI workflows to synthesize enterprise datasets, automate analytical queries, and generate strategic recommendations.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Job Simulation</span>
+            <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_6965df5c6582267cb3d7780f_1769515503243_completion_certificate.pdf" target="_blank" rel="noopener noreferrer" class="verify-link">
+              Verify Credential ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 8: GUVI Apps -->
+        <div class="cert-card" data-category="certifications">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">Certification</span>
+            <span class="cert-issuer">Completed</span>
+          </div>
+          <h4 class="cert-title">Build and Deploy Apps</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">HCL GUVI</div>
+          <p class="cert-description">End-to-end cloud deployment pipelines, containerization workflows, and scalable application hosting architecture.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Certification</span>
+            <a href="https://www.guvi.in/verify-certificate?id=d1P4v2Ay678J07088h" target="_blank" rel="noopener noreferrer" class="verify-link">
+              Verify Credential ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 9: EF SET -->
+        <div class="cert-card" data-category="certifications">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">Certification</span>
+            <span class="cert-issuer">Completed</span>
+          </div>
+          <h4 class="cert-title">EF SET English Certificate</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">EF Standard English Test</div>
+          <p class="cert-description">Internationally standardized assessment verifying professional English proficiency in reading and listening comprehension (C1/C2).</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Certification</span>
+            <a href="https://cert.efset.org/J2LL69" target="_blank" rel="noopener noreferrer" class="verify-link">
+              Verify Credential ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 10: Neurathon'26 -->
+        <div class="cert-card" data-category="hackathons">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">30-hr Hackathon</span>
+            <span class="cert-issuer">9 – 10 Feb 2026</span>
+          </div>
+          <button type="button" class="cert-preview-trigger" onclick="openCertificateModal('hack-neurathon')" aria-label="View Neurathon'26 certificate">
+            <img src="assets/certificates/new-prince-neurathon-2026.jpg" alt="Neurathon'26 participation certificate" class="cert-preview-img" />
+          </button>
+          <h4 class="cert-title">Neurathon'26 (30-Hour National Hackathon)</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">New Prince Shri Bhavani College of Engineering & Technology</div>
+          <p class="cert-description">Intense 30-hour innovation sprint engineering AI-driven solutions and neural network models for real-world automation.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Hackathon</span>
+            <a href="assets/certificates/new-prince-neurathon-2026.jpg" onclick="event.preventDefault(); openCertificateModal('hack-neurathon')" class="verify-link">
+              View Certificate ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 11: Protothon 2K25 -->
+        <div class="cert-card" data-category="hackathons">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">24-hr Hackathon</span>
+            <span class="cert-issuer">4 – 5 Dec 2025</span>
+          </div>
+          <button type="button" class="cert-preview-trigger" onclick="openCertificateModal('hack-protothon')" aria-label="View Protothon 2K25 certificate">
+            <img src="assets/certificates/hindusthan-protothon-2k25.jpg" alt="Protothon 2K25 participation certificate" class="cert-preview-img" />
+          </button>
+          <h4 class="cert-title">Protothon 2K25 (24-Hour National Hackathon)</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Hindustan Institute of Technology & Science, Dept. of ECE</div>
+          <p class="cert-description">Collaborative prototype build creating an integrated hardware-software solution under strict 24-hour time constraints.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Hackathon</span>
+            <a href="assets/certificates/hindusthan-protothon-2k25.jpg" onclick="event.preventDefault(); openCertificateModal('hack-protothon')" class="verify-link">
+              View Certificate ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 12: Metaverse 2025 -->
+        <div class="cert-card" data-category="hackathons">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">24-hr Hackathon</span>
+            <span class="cert-issuer">24 – 25 Nov 2025</span>
+          </div>
+          <button type="button" class="cert-preview-trigger" onclick="openCertificateModal('hack-metaverse')" aria-label="View Metaverse 2025 certificate">
+            <img src="assets/certificates/mohammad-sathak-metaverse-2025.jpg" alt="Metaverse 2025 participation certificate" class="cert-preview-img" />
+          </button>
+          <h4 class="cert-title">Metaverse 2025 (24-Hour National Hackathon)</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Mohamed Sathak A J College of Engineering</div>
+          <p class="cert-description">Architected modern decentralized and immersive interactive concepts for community technology platforms.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Hackathon</span>
+            <a href="assets/certificates/mohammad-sathak-metaverse-2025.jpg" onclick="event.preventDefault(); openCertificateModal('hack-metaverse')" class="verify-link">
+              View Certificate ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 13: Thinkfinity 2K25 -->
+        <div class="cert-card" data-category="hackathons">
+          <div class="cert-top-row">
+            <span class="cert-type-pill">One-day Hackathon</span>
+            <span class="cert-issuer">29 Sep 2025</span>
+          </div>
+          <button type="button" class="cert-preview-trigger" onclick="openCertificateModal('hack-thinkfinity')" aria-label="View Thinkfinity-2K25 certificate">
+            <img src="assets/certificates/sriram-thinkfinity-2k25.jpg" alt="Thinkfinity-2K25 participation certificate" class="cert-preview-img" />
+          </button>
+          <h4 class="cert-title">Thinkfinity-2K25 Hackathon</h4>
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Sriram Engineering College, School of CSE</div>
+          <p class="cert-description">Algorithmic problem-solving and rapid rapid-fire development solving computational challenges.</p>
+          <div class="cert-action-row">
+            <span class="tech-tag">Hackathon</span>
+            <a href="assets/certificates/sriram-thinkfinity-2k25.jpg" onclick="event.preventDefault(); openCertificateModal('hack-thinkfinity')" class="verify-link">
+              View Certificate ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FR-08: SKILLS & TOOLS SECTION (Categorized with Soft-UI & Badges)
+       ========================================================================== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="tape-label">TECHNICAL TOOLBOX</div>
+        <h2 class="section-title">Skills & Capabilities</h2>
+        <p class="section-subtitle">Categorized proficiencies across programming languages, web stacks, databases, embedded IoT, and developer tools.</p>
+      </div>
+
+      <!-- Skill Tabs -->
+      <div class="skill-filter-bar">
+        <button class="filter-pill active" data-skill-filter="all">All Categories</button>
+        <button class="filter-pill" data-skill-filter="languages">Languages</button>
+        <button class="filter-pill" data-skill-filter="web">Web & Frontend</button>
+        <button class="filter-pill" data-skill-filter="databases">Databases</button>
+        <button class="filter-pill" data-skill-filter="iot">IoT & Embedded</button>
+        <button class="filter-pill" data-skill-filter="tools">Developer Tools</button>
+      </div>
+
+      <div id="skills-grid-container" class="skills-grid">
+        
+        <!-- Category 1: Languages -->
+        <div class="skill-category-card" data-skill-cat="languages">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <div>
+              <h3 style="font-size: 1.22rem;">Languages & Core</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Core computational languages for systems, algorithms, and AI</p>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-item">
+              <div class="skill-item-header"><span>Python</span><span class="skill-tag-badge">Primary</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>C</span><span class="skill-tag-badge">Systems</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>Java (Oracle SE17)</span><span class="skill-tag-badge">Certified</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Web & Frontend -->
+        <div class="skill-category-card" data-skill-cat="web">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <div>
+              <h3 style="font-size: 1.22rem;">Web & Frontend</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Modern, responsive, accessible interfaces and design tokens</p>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-item">
+              <div class="skill-item-header"><span>HTML5</span><span class="skill-tag-badge">Semantic</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>CSS3 / Modern Styling</span><span class="skill-tag-badge">Soft-UI</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>JavaScript (ES6+)</span><span class="skill-tag-badge">Dynamic</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 86%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Databases -->
+        <div class="skill-category-card" data-skill-cat="databases">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div>
+              <h3 style="font-size: 1.22rem;">Databases & Backend</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Real-time state synchronization and cloud databases</p>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-item">
+              <div class="skill-item-header"><span>Firebase</span><span class="skill-tag-badge">Realtime</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>Supabase</span><span class="skill-tag-badge">Postgres Cloud</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: IoT & Embedded -->
+        <div class="skill-category-card" data-skill-cat="iot">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line></svg>
+            </div>
+            <div>
+              <h3 style="font-size: 1.22rem;">IoT & Embedded Systems</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Microcontrollers, firmware, and hardware sensor integration</p>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-item">
+              <div class="skill-item-header"><span>ESP32</span><span class="skill-tag-badge">Microcontroller</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 86%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>Arduino</span><span class="skill-tag-badge">Embedded</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>Hardware Sensors</span><span class="skill-tag-badge">IoT</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 84%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>NPTEL Internet of Things</span><span class="skill-tag-badge">Certified</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 5: Developer Tools -->
+        <div class="skill-category-card" data-skill-cat="tools">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            </div>
+            <div>
+              <h3 style="font-size: 1.22rem;">Tools & Workflows</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Development environments, repositories, and computational software</p>
+            </div>
+          </div>
+          <div class="skill-bars-list">
+            <div class="skill-item">
+              <div class="skill-item-header"><span>Git & GitHub</span><span class="skill-tag-badge">DISHA-1125</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>VS Code</span><span class="skill-tag-badge">Editor</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>MATLAB</span><span class="skill-tag-badge">Computation</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 82%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-header"><span>XAMPP</span><span class="skill-tag-badge">Local Server</span></div>
+              <div class="skill-track"><div class="skill-fill" style="width: 80%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FR-09: EXPERIENCE & LEADERSHIP TIMELINE
+       ========================================================================== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="tape-label">LEADERSHIP & INDUSTRY ENGAGEMENT</div>
+        <h2 class="section-title">Experience Timeline</h2>
+        <p class="section-subtitle">Industry internships, enterprise resource planning analytics, and campus technical leadership.</p>
+      </div>
+
+      <div id="experience-timeline-container" class="timeline">
+        
+        <!-- Experience 1: AMSTEEL Castings ERP Internship -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3 class="timeline-role">Data Entry & Data Analyst Intern</h3>
+              <span class="timeline-period">Oct 5 – Jan 5</span>
+            </div>
+            <div class="timeline-org">AMSTEEL Castings Pvt, Hosur</div>
+            <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Enterprise Resource Planning (ERP) Department</div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.9rem;">Contributed to data reconciliation, production reporting, and inventory data integrity within the plant's core Enterprise Resource Planning (ERP) systems.</p>
+            <ul class="timeline-bullets">
+              <li>Analyzed daily manufacturing, inventory, and supply chain records to support data-driven decisions across the ERP department.</li>
+              <li>Performed systematic data entry and quality verification, ensuring zero discrepancy between shop floor logs and centralized databases.</li>
+              <li>Collaborated with senior production managers to generate summarized reporting sheets for operational planning.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience 2: ZyRonix Tech Club -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3 class="timeline-role">Registration Head & Event Coordinator</h3>
+              <span class="timeline-period">2026 – 2028 (8 months)</span>
+            </div>
+            <div class="timeline-org">ZyRonix Tech Club, SIMATS Engineering</div>
+            <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.5rem;">Department of Computer Science and Engineering</div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.9rem;">Led the registration operations, delegate logistics, and participant onboarding for collegiate hackathons and technical symposiums.</p>
+            <ul class="timeline-bullets">
+              <li>Directed the delegate onboarding and registration desk for 500+ participants across flagship university tech fests.</li>
+              <li>Streamlined digital check-in workflows, reducing on-ground queue wait times during major campus event launches.</li>
+              <li>Coordinated with student organizing committees, event judges, and department faculty.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FR-11 & FR-12: CONTACT, RESUME & QR CODE SECTION
+       ========================================================================== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="tape-label">START A CONVERSATION</div>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Interested in internships, research collaboration, or discussing new ideas? Reach out directly.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Contact Details & Dynamic QR Code -->
+        <div class="contact-info-card">
+          <div class="tape-label" style="margin-bottom: 1rem;">DIRECT CHANNELS</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.6rem;">Disha P</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            Open to Summer 2026 internships, research assistantships, and creative technology discussions.
+          </p>
+
+          <div class="contact-channels">
+            <a href="mailto:dishapradeep25@gmail.com" class="contact-channel-item">
+              <div class="channel-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Email</div>
+                <div style="font-weight: 600; font-size: 0.92rem;">dishapradeep25@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/disha-p-47231530b" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <div class="channel-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">LinkedIn</div>
+                <div style="font-weight: 600; font-size: 0.92rem;">linkedin.com/in/disha-p-47231530b</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/DISHA-1125" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <div class="channel-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">GitHub</div>
+                <div style="font-weight: 600; font-size: 0.92rem;">github.com/DISHA-1125</div>
+              </div>
+            </a>
+
+            <div class="contact-channel-item">
+              <div class="channel-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Location</div>
+                <div style="font-weight: 600; font-size: 0.92rem;">Chennai, Tamil Nadu, India</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- QR Code Box (FR-12 & Reference 1) -->
+          <div class="qr-code-box">
+            <canvas id="qr-canvas" class="qr-canvas"></canvas>
+            <div class="qr-info">
+              <h5>Scan for Mobile Portfolio</h5>
+              <p>Instant access to Disha's resume, research credentials, and contact cards.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Contact Form -->
+        <div class="contact-form-card">
+          <div class="tape-label" style="margin-bottom: 1.25rem;">SEND A MESSAGE</div>
+          <form id="contact-form">
+            <!-- Anti-spam Honeypot -->
+            <input type="text" name="website" class="form-hp" tabindex="-1" autocomplete="off">
+
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Your Name *</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Elena Rostova" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email Address *</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="e.g. elena@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-domain" class="form-label">Conversation Topic</label>
+              <select id="contact-domain" class="form-select">
+                <option value="internship">Summer 2026 Internship Opportunity</option>
+                <option value="research">Academic / Research Collaboration</option>
+                <option value="project">Design or Engineering Project Inquiry</option>
+                <option value="general">General Networking / Coffee Chat</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Your Message *</label>
+              <textarea id="contact-message" class="form-textarea" placeholder="Tell me about your team, project, or what you'd like to collaborate on..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">
+              <span>Send Message</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="nav-brand" style="margin-bottom: 0.35rem;">
+            <div class="brand-monogram">D</div>
+            <span>Disha P</span>
+          </div>
+          <p class="footer-copy">
+            Designed & Engineered with the 4 Confirmed Palette Tokens. SIMATS Engineering, Class of 2028.
+          </p>
+        </div>
+
+        <div class="footer-palette-dots" title="Color System: Deep Burgundy (#561C24), Wine (#6D2932), Warm Taupe (#C7B7A3), Cream (#E8D8C4), Linen Beige (#F4EBE1)">
+          <div class="palette-dot" style="background: #561C24;" title="#561C24 (Deep Burgundy)"></div>
+          <div class="palette-dot" style="background: #6D2932;" title="#6D2932 (Wine)"></div>
+          <div class="palette-dot" style="background: #C7B7A3;" title="#C7B7A3 (Warm Taupe)"></div>
+          <div class="palette-dot" style="background: #E8D8C4;" title="#E8D8C4 (Cream)"></div>
+          <div class="palette-dot" style="background: #F4EBE1;" title="#F4EBE1 (Natural Linen Beige)"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       UNIVERSAL MODAL OVERLAY (Projects, Certificates & Resume)
+       ========================================================================== -->
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true">
+    <div id="modal-content-container"></div>
+  </div>
+
+  <!-- ==========================================================================
+       COMMAND PALETTE MODAL (Ctrl + K / Search Widget)
+       ========================================================================== -->
+  <div id="cmd-palette-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Command search palette">
+    <div class="modal-card">
+      <div class="cmd-input-wrapper">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="cmd-input" class="cmd-input" placeholder="Jump to projects, skills, research, certificates..." autocomplete="off">
+        <button class="modal-close-btn" onclick="document.getElementById('cmd-palette-modal').classList.remove('active'); document.body.style.overflow='';" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <ul id="cmd-results-list" class="cmd-results-list"></ul>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/audio-effects.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
